@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Kelvingrover - Home</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -74,16 +74,7 @@
     
 	    <p class="lead">Easy Walking routes are the routes that we would recommend to people who may struggle with the elevation of some of the moderate routes. These are routes for those who enjoy a leisurely stroll or those that find the moderate walks leave them out of breath at some points. If these routes seem too ambitious, or if you make use of a mobility aid, we'd recommend checking out the page dedicated to our mobility-aid users. Remember, challenging yourself is good, but don't attempt a route alone that may leave you needing assistance at some point.</p>
 	    <div id="mapid"></div>
-		<script>
-			     var map = L.map('mapid').setView([55.8686, -4.2850], 15);
-
-			     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicG1hY2FsZCIsImEiOiJjam9lZ2dmNnkwOG5mM3RwaXVpenNjZjl2In0.xY30r6ME_IZuTEAqHvXqbg', {
-				    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-				    maxZoom: 25,
-				    id: 'mapbox.streets',
-				    accessToken: 'pk.eyJ1IjoicG1hY2FsZCIsImEiOiJjam9lZ2dmNnkwOG5mM3RwaXVpenNjZjl2In0.xY30r6ME_IZuTEAqHvXqbg'
-				}).addTo(map);
-		</script>
+		<script type="text/javascript" id="mapcall" filepassed="route-from-kelvinbridge-to-kelvingrove-gallery.gpx" dirpassed="EasyRoutes" src="js/maps.js"></script>
 	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

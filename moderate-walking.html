@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,17 +76,9 @@
 	    <p class="lead">Moderate walking routes are the most difficult routes we'll cover. They may not seem challenging for all users, but we recommend you try a couple and decide for yourself if they suit you. If you decide that the routes are a bit much for your purposes, or struggle with the elevation of the routes, please do have a look through our routes of other difficulties.</p>
 	    <div id="mapid"></div>
 	</div>
-	<script>
-	    var map = L.map('mapid').setView([55.8686, -4.2850], 15);
 
-	     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicG1hY2FsZCIsImEiOiJjam9lZ2dmNnkwOG5mM3RwaXVpenNjZjl2In0.xY30r6ME_IZuTEAqHvXqbg', {
-		    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		    maxZoom: 25,
-		    id: 'mapbox.streets',
-		    accessToken: 'pk.eyJ1IjoicG1hY2FsZCIsImEiOiJjam9lZ2dmNnkwOG5mM3RwaXVpenNjZjl2In0.xY30r6ME_IZuTEAqHvXqbg'
-		}).addTo(map);
-	    
-	</script>
+
+	<script type="text/javascript" id="mapcall" filepassed="hilly-park-walk.gpx" dirpassed="ModerateRoutes" src="js/maps.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
