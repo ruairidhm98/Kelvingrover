@@ -1,84 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Kelvingrover - Home</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Kelvingrover - Home</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="icon" href="favicon.ico">
-    <style>
-    	.mw-75 {max-width: 75%;}
+	<link rel="icon" href="favicon.ico">
+	<style>
+		.mw-75 {max-width: 75%;}
     	.justified-center {text-align: justify; margin:auto;}
     	#mapid {height: 300px; margin: auto;}
 	</style>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
-   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-   crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
-   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-   crossorigin=""></script>
-  </head>
-  
-  <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		  </button>
-		  <a class="navbar-brand" href="index.html">Kelvingrover</a>
-		</div>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+	 crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+	 crossorigin=""></script>
+</head>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-			
-			
-			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Walking Routes<span class="caret"></span></a>
-			  <ul class="dropdown-menu">
-				<li><a href="easy-walking.html">Easy Walking Routes</a></li>
-				<li><a href="moderate-walking.html">Moderate Walking Routes</a></li>
-				<li><a href="mobility-assisted.html">Routes for Mobility-assisted</a></li>				
-			  </ul>
-			</li>
-			<li><a href="cycling.html">Cycling Routes</a></li>
-		  </ul>
-		  
-		  <ul class="nav navbar-nav navbar-right">
-			<li><a href="the-what.html">What is This?</a></li>
-			<li><a href="the-how.html">How to Use This</a></li>
-			
-		  </ul>
-		</div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				 aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Kelvingrover</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Walking
+							Routes<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="easy-walking.html">Easy Walking Routes</a></li>
+							<li><a href="moderate-walking.html">Moderate Walking Routes</a></li>
+							<li><a href="mobility-assisted.html">Routes for Mobility-assisted</a></li>
+						</ul>
+					</li>
+					<li><a href="cycling.html">Cycling Routes</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="the-what.html">What is This?</a></li>
+					<li><a href="the-how.html">How to Use This</a></li>
+
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
 	</nav>
 	<div class="mw-75 justified-center">
-    	<h1>Easy Walking Routes</h1>
-    
-	    <p class="lead">Easy Walking routes are the routes that we would recommend to people who may struggle with the elevation of some of the moderate routes. These are routes for those who enjoy a leisurely stroll or those that find the moderate walks leave them out of breath at some points. If these routes seem too ambitious, or if you make use of a mobility aid, we'd recommend checking out the page dedicated to our mobility-aid users. Remember, challenging yourself is good, but don't attempt a route alone that may leave you needing assistance at some point.</p>
-	    <div id="mapid"></div>
-		<script type="text/javascript" id="mapcall" filepassed="route-from-kelvinbridge-to-kelvingrove-gallery.gpx" dirpassed="EasyRoutes" src="js/maps.js"></script>
+		<h1 style="cursor:-webkit-grab;">Easy Walking Routes</h1>
+
+		<p class="lead" style="display:none;">Easy Walking routes are the routes that we would recommend to people who may
+			struggle with the elevation of some of the moderate routes. These are routes
+			for those who enjoy a leisurely stroll or those that find the moderate walks leave them out of breath at some
+			points. If these routes seem too ambitious, or if you make
+			use of a mobility aid, we'd recommend checking out the page dedicated to our mobility-aid users. Remember,
+			challenging yourself is good, but don't attempt a route alone
+			that may leave you needing assistance at some point.</p>
+		<div id="mapid"></div>
+		<script type="text/javascript" id="mapcall" filepassed="route-from-kelvinbridge-to-kelvingrove-gallery.gpx" dirpassed="EasyRoutes"
+		 src="js/maps.js"></script>
 	</div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+	<script type="text/javascript" src="js/show.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
 </html>

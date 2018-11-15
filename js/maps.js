@@ -21,7 +21,6 @@ $(document).ready(function () {
 });
 
 
-
 function parseXML (xml) {
     
     var xmlDoc = xml.responseXML;
@@ -31,12 +30,10 @@ function parseXML (xml) {
     return coords;
 }
 
-
 function getTitle (xmlDoc) {
     var names = xmlDoc.getElementsByTagName("name");
     console.log(names[0].childNodes[0].nodeValue)
 }
-
 
 function getTrack (xmlDoc) {
     
@@ -49,8 +46,6 @@ function getTrack (xmlDoc) {
 
     return coords;
 }
-
-
 
 function drawMap () {
     
