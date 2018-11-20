@@ -1,25 +1,30 @@
+var map;
+
 $(document).ready(function () {
-
-    var map = drawMap();
-
-    var directory = document.getElementById("mapcall").getAttribute("dirpassed");
-    var filepassed = document.getElementById("mapcall").getAttribute("filepassed");
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var routeCoords = parseXML(this);
-            var route = L.polyline(routeCoords, {color: 'red'});
-            route.addTo(map);
-            map.setView(routeCoords[0]);
-        }
-    };
-    var path = "../Kelvingrover/" + directory + "/" + filepassed
-    xhttp.open("GET", path , true);
-    xhttp.send();
-
+	map = drawMap();
 });
 
+function fetchRoute(elem) {
+	map.eachLayer(function(layer){
+		if (layer._path != undefined)
+			map.removeLayer(layer);
+});
+	filepassed = elem.getAttribute("value");
+		var path = "../Kelvingrover/" + filepassed
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var routeCoords = parseXML(this);
+				var route = L.polyline(routeCoords, {color: 'red'});
+				route.addTo(map);
+				map.setView(routeCoords[0]);
+			}
+		};
+		
+		xhttp.open("GET", path , true);
+		
+		xhttp.send();
+}
 
 function parseXML (xml) {
     
