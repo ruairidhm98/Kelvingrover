@@ -1,10 +1,15 @@
 var map;
+var mapName;
+var startMarker;
+var endMarker;
 
 $(document).ready(function () {
 	map = drawMap();
 });
 
 function fetchRoute(elem) {
+	
+	
 	map.eachLayer(function(layer){
 		if (layer._path != undefined)
 			map.removeLayer(layer);
@@ -17,6 +22,14 @@ function fetchRoute(elem) {
 				var routeCoords = parseXML(this);
 				var route = L.polyline(routeCoords, {color: 'red'});
 				route.addTo(map);
+				if (startMarker != null)
+					map.removeLayer(startMarker);
+				if (endMarker != null)
+					map.removeLayer(endMarker);
+				startMarker = L.marker(routeCoords[0]).addTo(map).bindPopup("<b>Start</b>")
+        .openPopup();
+				endMarker = L.marker(routeCoords[routeCoords.length-1]).addTo(map).bindPopup("<b>End</b>");
+					
 				map.setView(routeCoords[0]);
 			}
 		};
@@ -24,6 +37,7 @@ function fetchRoute(elem) {
 		xhttp.open("GET", path , true);
 		
 		xhttp.send();
+		document.getElementById("routeIdentifier").innerHTML = mapName;
 }
 
 function parseXML (xml) {
@@ -37,7 +51,7 @@ function parseXML (xml) {
 
 function getTitle (xmlDoc) {
     var names = xmlDoc.getElementsByTagName("name");
-    console.log(names[0].childNodes[0].nodeValue)
+    mapName = names[0].childNodes[0].nodeValue;
 }
 
 function getTrack (xmlDoc) {
