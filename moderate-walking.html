@@ -72,6 +72,7 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
+	<script type="text/javascript"  src="js/maps.js"></script>
 	<div class="mw-75 justified-center">
 		<h1 style="cursor:-webkit-grab;">Moderate Walking Routes</h1>
 
@@ -80,6 +81,20 @@
 			all users, but we recommend you try a couple and decide for yourself if they suit you. If you decide that the routes
 			are a bit much for your purposes, or struggle with the elevation of the routes, please do have a look through our
 			routes of other difficulties.</p>
+
+
+		<h2 id="routeIdentifier"></h2>
+		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+
+		  <div class="btn-group mr-2" role="group" aria-label="First group">
+		  	
+			    <button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/circuit-of-park-starting-at-the-university.gpx" class="btn btn-secondary">1</button>
+			    <button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/hilly-park-walk.gpx" class="btn btn-secondary">2</button>
+			    <button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/kelvingrove-park-botanic-gardens-and-maryhill.gpx" class="btn btn-secondary">3</button>
+			    <button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/kelvingrove-park-moderate.gpx" class="btn btn-secondary">4</button>
+
+		  </div>
+		</div>
 		<div id="mapid"></div>
 	</div>
 

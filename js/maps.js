@@ -29,15 +29,14 @@ function fetchRoute(elem) {
 				startMarker = L.marker(routeCoords[0]).addTo(map).bindPopup("<b>Start</b>")
         .openPopup();
 				endMarker = L.marker(routeCoords[routeCoords.length-1]).addTo(map).bindPopup("<b>End</b>");
-					
+				document.getElementById("routeIdentifier").innerHTML = mapName;
 				map.setView(routeCoords[0]);
 			}
 		};
 		
 		xhttp.open("GET", path , true);
-		
+		document.getElementById("routeIdentifier").html = "Test";
 		xhttp.send();
-		document.getElementById("routeIdentifier").innerHTML = mapName;
 }
 
 function parseXML (xml) {
@@ -45,7 +44,7 @@ function parseXML (xml) {
     var xmlDoc = xml.responseXML;
     getTitle(xmlDoc);
     coords = getTrack(xmlDoc);
-
+	
     return coords;
 }
 

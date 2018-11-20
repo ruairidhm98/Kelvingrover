@@ -70,10 +70,24 @@
 		</div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
-
+	<script type="text/javascript"  src="js/maps.js"></script>
 	<div class="mw-75 justified-center">
 	  <h1 style="cursor:-webkit-grab;">Cycling Routes</h1>
 	  <p class="lead">Description</p>
+
+	  <h2 id="routeIdentifier"></h2>
+		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+
+		  <div class="btn-group mr-2" role="group" aria-label="First group">
+		  	
+			    <button type="button" onclick="fetchRoute(this)" value="CycleRoutes/cycle-route-along-the-kelvin.gpx" class="btn btn-secondary">1</button>
+			    <button type="button" onclick="fetchRoute(this)" value="CycleRoutes/cycle-route-from-kelvinbridge-subway-to-la-belle-pl.gpx" class="btn btn-secondary">2</button>
+			    <button type="button" onclick="fetchRoute(this)" value="CycleRoutes/cycle-route-from-university-to-la-belle-pl.gpx" class="btn btn-secondary">3</button>
+			    <button type="button" onclick="fetchRoute(this)" value="CycleRoutes/kelvin-gallery-to-botanics-cycle.gpx" class="btn btn-secondary">4</button>
+			    <button type="button" onclick="fetchRoute(this)" value="CycleRoutes/kelvingrove-park-short-cycle-circuit.gpx" class="btn btn-secondary">5</button>
+
+		  </div>
+		</div>
 		<div id="mapid"></div>
 
 
