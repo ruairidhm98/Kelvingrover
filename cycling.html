@@ -21,7 +21,7 @@
     <style>
     	.mw-75 {max-width: 75%;}
     	.justified-center {text-align: justify; margin:auto;}
-    	#mapid {height: 300px; margin: auto;}
+    	#mapid {height: 500px; }
 	</style>
 	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -29,6 +29,7 @@
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
    crossorigin=""></script>
+   <script src="plotly-latest.min.js"></script>
   </head>
   
   <body>
@@ -48,7 +49,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="#">Home<span class="sr-only">(current)</span></a></li>
 			
 			
 			<li class="dropdown">
@@ -59,7 +60,7 @@
 				<li><a href="mobility-assisted.html">Routes for Mobility-assisted</a></li>				
 			  </ul>
 			</li>
-			<li><a href="cycling.html">Cycling Routes</a></li>
+			<li class="active"><a href="cycling.html">Cycling Routes</a></li>
 		  </ul>
 		  
 		  <ul class="nav navbar-nav navbar-right">
@@ -91,7 +92,7 @@
 		<div id="mapid"></div>
 
 
-		<script type="text/javascript" id="mapcall" filepassed="cycle-route-along-the-kelvin.gpx" dirpassed="CycleRoutes" src="js/maps.js"></script>
+		
 	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

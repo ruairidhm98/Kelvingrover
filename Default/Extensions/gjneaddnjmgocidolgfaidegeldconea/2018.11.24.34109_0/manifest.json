@@ -1,0 +1,20 @@
+{
+   "app": {
+      "launch": {
+         "web_url": "http://197.14.51.10:81/pmb/GESTION2/FINANCE/Accounting%20and%20Finance%20for%20Non-Specialists%205th%20Edition.pdf"
+      },
+      "linked_icons": [  ]
+   },
+   "description": "",
+   "icons": {
+      "128": "icons/128.png",
+      "256": "icons/256.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "64": "icons/64.png",
+      "96": "icons/96.png"
+   },
+   "key": "5TnLMX0wiIisy/YKoL77xULHJOJ00tVRTGEjgtIzHvQ=",
+   "name": "Finance Book",
+   "version": "2018.11.24.34109"
+}

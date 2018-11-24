@@ -28,6 +28,7 @@
 	 crossorigin="" />
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
 	 crossorigin=""></script>
+	<script src="plotly-latest.min.js"></script>
 </head>
 
 <body>
@@ -48,7 +49,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Home<span class="sr-only">(current)</span></a></li>
 
 
 					<li class="dropdown">
@@ -57,7 +58,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="easy-walking.html">Easy Walking Routes</a></li>
 							<li><a href="moderate-walking.html">Moderate Walking Routes</a></li>
-							<li><a href="mobility-assisted.html">Routes for Mobility-assisted</a></li>
+							<li class="active"><a href="mobility-assisted.html">Routes for Mobility-assisted</a></li>
 						</ul>
 					</li>
 					<li><a href="cycling.html">Cycling Routes</a></li>
@@ -71,6 +72,7 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
+	<script type="text/javascript"  src="js/maps.js"></script>
 	<div class="mw-75 justified-center">
 		<h1 style="cursor:-webkit-grab;">Routes for Mobility-aid Users</h1>
 
@@ -78,10 +80,23 @@
 			general
 			accessibility. Our aim was to ensure the routes included here are accessible to as many as possible. This is so that
 			users will not be disappointed upon arriving at the park, only to find they can't use the route.</p>
-		<div id="mapid"></div>
+			<h2 id="routeIdentifier"></h2>
+		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
-		<script type="text/javascript" id="mapcall" filepassed="route-from-kelvinbridge-to-kelvingrove-gallery.gpx" dirpassed="EasyRoutes"
-		 src="js/maps.js"></script>
+		  <div class="btn-group mr-2" role="group" aria-label="First group">
+		  	
+			    <button type="button" onclick="fetchRoute(this)" value="MobilityAidRoutes/hillhead-subway-circuit.gpx" class="btn btn-secondary">1</button>
+			    <button type="button" onclick="fetchRoute(this)" value="EasyRoutes/route-from-kelvinbridge-to-kelvingrove-gallery.gpx" class="btn btn-secondary">2</button>
+			    <button type="button" onclick="fetchRoute(this)" value="EasyRoutes/route-from-kelvingrove-to-botanics.gpx" class="btn btn-secondary">3</button>
+			    <button type="button" onclick="fetchRoute(this)" value="EasyRoutes/route-from-subway-to-kelvingrove-gallery.gpx" class="btn btn-secondary">4</button>
+
+		  </div>
+		</div>
+		<div id="mapid"></div>
+		<div id="article"></div>
+		
+
+		
 	</div>
 	<script type="text/javascript" src="js/show.js"></script>
 

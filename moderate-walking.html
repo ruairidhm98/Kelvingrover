@@ -29,6 +29,7 @@
 	<link rel="stylesheet">
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
 	 crossorigin=""></script>
+	 <script src="plotly-latest.min.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Home<span class="sr-only">(current)</span></a></li>
 
 
 					<li class="dropdown">
@@ -57,7 +58,7 @@
 							Routes<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="easy-walking.html">Easy Walking Routes</a></li>
-							<li><a href="moderate-walking.html">Moderate Walking Routes</a></li>
+							<li class="active"><a href="moderate-walking.html">Moderate Walking Routes</a></li>
 							<li><a href="mobility-assisted.html">Routes for Mobility-assisted</a></li>
 						</ul>
 					</li>
@@ -99,7 +100,7 @@
 	</div>
 
 
-	<script type="text/javascript" id="mapcall" filepassed="hilly-park-walk.gpx" dirpassed="ModerateRoutes" src="js/maps.js"></script>
+	
 	<script type="text/javascript" src="js/show.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -1,0 +1,19 @@
+{
+   "app": {
+      "launch": {
+         "web_url": "https://read.amazon.co.uk/?ref_=kcr_app_chrome_link"
+      },
+      "urls": [ "https://read.amazon.co.uk/" ]
+   },
+   "description": "Kindle Cloud Reader - Read Kindle books in your browser, and shop on Amazon.co.uk.",
+   "icons": {
+      "128": "icon_128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhaOUk9u1LCOnZCR2+LgFdg2y3I+tjGRRE8PjVw2+bNzUE8r8A/9HUenbQMK8ta+4upJ5BSwnY8qgfztnVGSwNlOwixPV5EXeSyyqzf7Tn/SWd8XsUsvaxYvGT3laC2tjbiQNGvE3s6UWiGijolULeyS67sYnfl0kUzTgZ/alhCKRzg8CvstAFGs33p5S9Jrwg8aHR08N8P7u8lNarkKB3C835n3oJZy3Qnzag1BZMFTm+sj+jj89fA8FfyDRbVILs18IRM1edlWLyiaPDN33Fou9RV5YR/RHdBXZZb4jicstQFjrh3Pe0Tsi27rNHiYyCgJkfG4u0mc28E0vJ3OKXQIDAQAB",
+   "manifest_version": 2,
+   "name": "Kindle Cloud Reader",
+   "offline_enabled": true,
+   "permissions": [ "unlimitedStorage", "notifications" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.7.0.22"
+}
