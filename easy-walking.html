@@ -27,7 +27,7 @@
 	 crossorigin="" />
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
 	 crossorigin=""></script>
-	 <script src="js/plotly-latest.min.js" type="module"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </head>
 
 <body>
@@ -52,7 +52,8 @@
 
 
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Walking Routes<span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Walking
+							Routes<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li class="active"><a href="easy-walking.html">Easy Walking Routes</a></li>
 							<li><a href="moderate-walking.html">Moderate Walking Routes</a></li>
@@ -70,10 +71,10 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-	<script type="text/javascript"  src="js/maps.js"></script>
+	<script type="text/javascript" src="js/maps.js"></script>
 	<div class="mw-75 justified-center">
-		<h1 style="cursor:-webkit-grab;">Easy Walking Routes</h1>
-		<p class="lead" >Easy Walking routes are the routes that we would recommend to people who may
+		<h1 style="cursor:grab;">Easy Walking Routes</h1>
+		<p class="lead">Easy Walking routes are the routes that we would recommend to people who may
 			struggle with the elevation of some of the moderate routes. These are routes
 			for those who enjoy a leisurely stroll or those that find the moderate walks leave them out of breath at some
 			points. If these routes seem too ambitious, or if you make
@@ -84,21 +85,26 @@
 		<h2 id="routeIdentifier"></h2>
 		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
-		  <div class="btn-group mr-2" role="group" aria-label="First group">
-		  	
-			    <button type="button" onclick="fetchRoute(this)" value="EasyRoutes/kelvinbridge-subway-circuit-to-the-university.gpx" class="btn btn-secondary">1</button>
-			    <button type="button" onclick="fetchRoute(this)" value="EasyRoutes/route-from-kelvinbridge-to-kelvingrove-gallery.gpx" class="btn btn-secondary">2</button>
-			    <button type="button" onclick="fetchRoute(this)" value="EasyRoutes/route-from-kelvingrove-to-botanics.gpx" class="btn btn-secondary">3</button>
-			    <button type="button" onclick="fetchRoute(this)" value="EasyRoutes/route-from-subway-to-kelvingrove-gallery.gpx" class="btn btn-secondary">4</button>
+			<div class="btn-group mr-2" role="group" aria-label="First group">
 
-		  </div>
+				<button type="button" onclick="fetchRoute(this)" value="EasyRoutes/kelvinbridge-subway-circuit-to-the-university.gpx"
+				 class="btn btn-secondary">1</button>
+				<button type="button" onclick="fetchRoute(this)" value="EasyRoutes/route-from-kelvinbridge-to-kelvingrove-gallery.gpx"
+				 class="btn btn-secondary">2</button>
+				<button type="button" onclick="fetchRoute(this)" value="EasyRoutes/route-from-kelvingrove-to-botanics.gpx" class="btn btn-secondary">3</button>
+				<button type="button" onclick="fetchRoute(this)" value="EasyRoutes/route-from-subway-to-kelvingrove-gallery.gpx"
+				 class="btn btn-secondary">4</button>
+
+			</div>
 		</div>
 		<div id="mapid"></div>
 		<div id="article"></div>
-		<div id="tester" style="width:600px;height:250px;"></div>
-		
+		<br /><br />
+		<canvas id="myChart"></canvas>
+
+
 	</div>
-	
+
 	<script type="text/javascript" src="js/show.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
