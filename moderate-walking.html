@@ -52,7 +52,6 @@
 				<ul class="nav navbar-nav">
 					<li><a href="#">Home<span class="sr-only">(current)</span></a></li>
 
-
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Walking
 							Routes<span class="caret"></span></a>
@@ -73,7 +72,7 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-	<script type="text/javascript"  src="js/maps.js"></script>
+	<script type="text/javascript" src="js/maps.js"></script>
 	<div class="mw-75 justified-center">
 		<h1 style="cursor:grab;">Moderate Walking Routes</h1>
 
@@ -87,14 +86,16 @@
 		<h2 id="routeIdentifier"></h2>
 		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
-		  <div class="btn-group mr-2" role="group" aria-label="First group">
-		  	
-			    <button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/circuit-of-park-starting-at-the-university.gpx" class="btn btn-secondary">1</button>
-			    <button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/hilly-park-walk.gpx" class="btn btn-secondary">2</button>
-			    <button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/kelvingrove-park-botanic-gardens-and-maryhill.gpx" class="btn btn-secondary">3</button>
-			    <button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/kelvingrove-park-moderate.gpx" class="btn btn-secondary">4</button>
+			<div class="btn-group mr-2" role="group" aria-label="First group">
 
-		  </div>
+				<button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/circuit-of-park-starting-at-the-university.gpx"
+				 class="btn btn-secondary">1</button>
+				<button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/hilly-park-walk.gpx" class="btn btn-secondary">2</button>
+				<button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/kelvingrove-park-botanic-gardens-and-maryhill.gpx"
+				 class="btn btn-secondary">3</button>
+				<button type="button" onclick="fetchRoute(this)" value="ModerateRoutes/kelvingrove-park-moderate.gpx" class="btn btn-secondary">4</button>
+
+			</div>
 		</div>
 		<div id="mapid"></div>
 		<div id="article"></div>
@@ -104,7 +105,7 @@
 	</div>
 
 
-	
+
 	<script type="text/javascript" src="js/show.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

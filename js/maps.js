@@ -47,15 +47,27 @@ function fetchRoute(elem) {
                     data: {
                         labels: tags,
                         datasets: [{
-                            label: "Elevation",
-                            backgroundColor: 'rgb(255, 99, 132)',
-                            borderColor: 'rgb(255, 99, 132)',
+                            label: "",
+                            backgroundColor: 'rgb(255, 165, 0)',
+                            borderColor: 'rgb(255, 165, 0)',
                             data: elevs,
                         }]
                     },
 
                     // Configuration options go here
-                    options: {}
+                    options: {
+                        legend: {
+                            display: false
+                        },
+                        scales: {
+                            yAxes : [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: "Elevation (m)"
+                                }
+                            }]
+                        }
+                    }
                 });
             }
         };
