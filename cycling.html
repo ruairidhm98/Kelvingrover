@@ -24,9 +24,11 @@
     	.justified-center {text-align: justify; margin:auto;}
     	#mapid {height: 500px; }
     	#landmarksmapid {height: 300px; margin: auto;}
+    	
 	</style>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
 	 crossorigin="" />
+	 <link rel="stylesheet" href="css/bonus.css"/>
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
 	 crossorigin=""></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
@@ -37,7 +39,7 @@
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				<button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
 				 aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
@@ -50,7 +52,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Home<span class="sr-only">(current)</span></a></li>
+					<li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
 
 
 					<li class="dropdown">
@@ -76,8 +78,9 @@
 	<script type="text/javascript" src="js/maps.js"></script>
 	<div class="mw-75 justified-center">
 		<h1 style="cursor:grab;">Cycling Routes</h1>
-		<p class="lead">Description</p>
+		<p class="lead">With our cycling routes, we tried to mainly stick to the main thoroughfares of the park so as not to force cyclists onto tight paths alongside pedestrians. We have attempted to include enough variety between the routes to allow you to enjoy them individually and hopefully see some sights unique to each onel. Happy cycling!</p>
 
+		<h2>Routes Map</h2>
 		<h2 id="routeIdentifier"></h2>
 		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
@@ -93,7 +96,6 @@
 
 			</div>
 		</div>
-		<h2>Routes Map</h2>
 		<div id="mapid"></div>
 		<div id="article"></div>
 		<br /><br />
