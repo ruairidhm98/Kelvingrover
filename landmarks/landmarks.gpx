@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<gpx xmlns:wptx1="http://www.garmin.com/xmlschemas/WaypointExtension/v1" xmlns:gpxedw="http://www.gpxeditor.co.uk/xmlschemas/WaypointExtension/v1" xmlns:gpxedts="http://www.gpxeditor.co.uk/xmlschemas/TrackSegExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" creator="GPXEditor" version="1.1" xmlns="http://www.topografix.com/GPX/1/1">
+  <wpt lat="55.86805" lon="-4.28383">
+    <name>Stewart Memorial Fountain</name>
+    <cmt>The Stewart Memorial Fountain was designed in 1870 by 27-year-old James Sellars, winner of the international competition hosted to produce the monument. It commemorates Lord Provost Robert Stewart, who is considered the main driving force behind Glasgow's first permanent fresh water supply. </cmt>
+  </wpt>
+  <wpt lat="55.86859" lon="-4.29072">
+    <name>Kelvingrove Art Gallery and Museum</name>
+    <cmt>Kelvingrove Art Gallery is a popular tourist attraction, constructed in 1901. Home to a multitude of notable pieces and artefacts, this gallery is certainly worth a visit.</cmt>
+  </wpt>
+  <wpt lat="55.87204" lon="-4.28825">
+    <name>University of Glasgow</name>
+    <cmt>Historic Scottish university, opened in 1451. This educational institute draws people from all over the world with its impressive architecture. Climb up the hill behind the university for a true Hogwarts-esque view.</cmt>
+  </wpt>
+  <wpt lat="55.86944" lon="-4.28578">
+    <name>The Bandstand</name>
+    <cmt>This bandstand is the only one of its kind still present in Glasgow, and was rennovated in time for the 2014 Commonwealth Games.</cmt>
+  </wpt>
+  <wpt lat="55.87028" lon="-4.28176">
+    <name>Lord Roberts Memorial</name>
+    <cmt>This monument is tribute to Lord Frederick Sleigh Roberts, who was a hero to Glaswegians during his lifetime. It's an almost identical copy to a statue in Calcutta, India.</cmt>
+  </wpt>
+  <wpt lat="55.86968" lon="-4.29332">
+    <name>Cameronians War Memorial</name>
+    <cmt>This statue commemorates the soldiers of the Cameronians regiment in World War 1 and World War 2.</cmt>
+  </wpt>
+  <wpt lat="55.8702" lon="-4.29326">
+    <name>Sunlight Cottages</name>
+    <cmt>These Quaint cottages stand out amongst the wider backdrop of Glasgow's architecture. We recommend taking the time to pass it and having a read of the plaque so you can find out why...</cmt>
+  </wpt>
+  <wpt lat="55.86965" lon="-4.28718">
+    <name>Lord Lister Statue</name>
+    <cmt>This statue was constructed in memory of Lord Joseph Lister, a Scottish surgeon credited with encouraging the practice of sterilised surgery while at the University of Glasgow.</cmt>
+  </wpt>
+  <wpt lat="55.86975" lon="-4.28686">
+    <name>Lord Kelvin Memorial</name>
+    <cmt>This statue was erected in order to commemorate the work and life of Lord Kelvin, a mathematical physicist and engineer. Amongst his many achievements, he is accredited with devising the kelvin scale for temperatures.</cmt>
+  </wpt>
+  <wpt lat="55.87032" lon="-4.28383">
+    <name>Highland Light Infantry Memorial</name>
+    <cmt>The Highland Light Infantry, like the Cameronians, was a regiment within the British Army that were involved in both the first and second World Wars.</cmt>
+  </wpt>
+  <wpt lat="55.8682" lon="-4.28259">
+    <name>Bengal Tigress</name>
+    <cmt>This statue, unveiled in 1867, is designed to highlight the more ferocious aspects of a tiger's prowess. There is another copy of the statue in Central Park, NYC, and they were unveiled in the same year.</cmt>
+  </wpt>
+</gpx>
