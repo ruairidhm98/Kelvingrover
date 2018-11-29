@@ -10,6 +10,44 @@ $(document).ready(function () {
     drawLandmarks();
 });
 
+function handleFiles(files) {
+
+    if (files.length > 1) {
+        alert("Please upload one file at a time in order to view it.");
+        return;
+    }
+    var uploaded_xml;
+    var reader = new FileReader();
+    reader.onload = function() {
+        //console.log(reader.result);
+        var gpx_text = reader.result;
+        parser = new DOMParser();
+        var xml = parser.parseFromString(gpx_text,"text/xml");
+        console.log(xml);
+        getTitle(xml);
+        var routeCoords = getTrack(xml);
+        
+        var route = L.polyline(routeCoords, { color: 'red' });
+        route.addTo(map);
+        if (startMarker != null)
+            map.removeLayer(startMarker);
+        if (endMarker != null)
+            map.removeLayer(endMarker);
+        startMarker = L.marker(routeCoords[0]).addTo(map).bindPopup("<b>Start</b>")
+            .openPopup();
+        endMarker = L.marker(routeCoords[routeCoords.length - 1]).addTo(map).bindPopup("<b>End</b>");
+        //document.getElementById("routeIdentifier").innerHTML = mapName;
+        //document.getElementById("elevationChart").innerHTML = "Elevation Chart";
+        map.setView(routeCoords[0]);
+        //console.log(xmlDoc.getElementsByTagName("trkpt"));
+    }
+
+    var xmlDoc = reader.readAsText(files[0]);
+    
+}
+
+
+
 function fetchRoute(elem) {
 
     map.eachLayer(function (layer) {
@@ -73,7 +111,7 @@ function fetchRoute(elem) {
         xhttp.open("GET", path, true);
     }
     else {
-        alert("Your browser is too secure for this un-deployed site.");
+        alert("Your browser is too secure for this un-deployed site. Please try using Microsoft Edge or Firefox instead.");
     }
     
     xhttp.send();
