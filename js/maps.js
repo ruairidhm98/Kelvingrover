@@ -206,8 +206,12 @@ function makeChart(elevs,labels={}) {
 }
 
 function getTitle(xmlDoc) {
-    var names = xmlDoc.getElementsByTagName("name");
-    mapName = names[0].childNodes[0].nodeValue;
+    try {
+        var names = xmlDoc.getElementsByTagName("name");
+        mapName = names[0].childNodes[0].nodeValue;
+    } catch (err) {
+        alert("Error: file contains an error!");
+    }
 }
 
 function getTrack(xmlDoc) {
