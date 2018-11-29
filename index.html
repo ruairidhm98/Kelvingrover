@@ -23,12 +23,14 @@
 		
     	#mapid {height: 300px; margin: auto;}
     	#landmarksmapid {height: 300px; margin: auto;}
+    	#customLandmarksMapid {height: 300px; margin: auto;}
 	</style>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
 	 crossorigin="" />
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
 	 crossorigin=""></script>
-	 <script src="plotly-latest.min.js"></script>
+	 
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </head>
 
 <body>
@@ -85,36 +87,25 @@
 
 		<h2>Map of Kelvingrove Park</h2>
 		<p>Select a GPX file to view here:</p>
+
 		<input type="file" name="fileUpload"  onchange="handleFiles(this.files)"> 
+		<br />
 
 
-
-		<div id="mapid">
-
-		</div>
-		<script>
-			var map = L.map('mapid').setView([55.8686, -4.2850], 15);
-			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicG1hY2FsZCIsImEiOiJjam9lZ2dmNnkwOG5mM3RwaXVpenNjZjl2In0.xY30r6ME_IZuTEAqHvXqbg', {
-				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-				maxZoom: 25,
-				id: 'mapbox.streets',
-				accessToken: 'pk.eyJ1IjoicG1hY2FsZCIsImEiOiJjam9lZ2dmNnkwOG5mM3RwaXVpenNjZjl2In0.xY30r6ME_IZuTEAqHvXqbg'
-			}).addTo(map);
-			var parkMarker = L.marker([55.868895, -4.287345]).addTo(map);
-			parkMarker.bindPopup("<b>Kelvingrove Park</b><br>The home of all your new favourite walks.").openPopup();
-		</script>
-
+		<div id="mapid"></div>
 		
+
+		<br />
+		<h2 id="elevationChart"></h2>
+		<canvas id="myChart"></canvas>
+		<br />
 		
 		<h2>Landmarks</h2>
 		<div id="landmarksmapid"></div>
 
-		<div> <h2 id="landmarkTitle"></h2>
-			<p id="landmarkDescription"></p>
-		</div>
 	</div>
 
-
+	
 	<script type="text/javascript" src="js/show.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

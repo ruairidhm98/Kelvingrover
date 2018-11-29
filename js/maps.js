@@ -4,10 +4,15 @@ var startMarker;
 var endMarker;
 var landmarks_map;
 
+var elevChart;
+
+
 $(document).ready(function () {
-    if (document.title != "Kelvingrover - Home") 
-        drawMap();
+    drawMap();
     drawLandmarks();
+
+    if (document.title != "Kelvingrover - Home")
+        placeLandmarks();
 });
 
 function handleFiles(files) {
@@ -23,23 +28,53 @@ function handleFiles(files) {
         var gpx_text = reader.result;
         parser = new DOMParser();
         var xml = parser.parseFromString(gpx_text,"text/xml");
-        console.log(xml);
+        //console.log(xml);
         getTitle(xml);
         var routeCoords = getTrack(xml);
         
-        var route = L.polyline(routeCoords, { color: 'red' });
-        route.addTo(map);
-        if (startMarker != null)
-            map.removeLayer(startMarker);
-        if (endMarker != null)
-            map.removeLayer(endMarker);
-        startMarker = L.marker(routeCoords[0]).addTo(map).bindPopup("<b>Start</b>")
-            .openPopup();
-        endMarker = L.marker(routeCoords[routeCoords.length - 1]).addTo(map).bindPopup("<b>End</b>");
-        //document.getElementById("routeIdentifier").innerHTML = mapName;
-        //document.getElementById("elevationChart").innerHTML = "Elevation Chart";
-        map.setView(routeCoords[0]);
-        //console.log(xmlDoc.getElementsByTagName("trkpt"));
+        // Make elevation chart and display
+        var elevs = getElevations(xml);
+        var tags = getLabels(xml);
+
+        if (elevs.length != 0)
+            elevChart = makeChart(elevs,tags);
+        
+        
+        
+        
+        // Make custom waypoint display
+        var landmarks = getLandmarks(xml);
+        if (landmarks.length != 0) {
+            landmarks_map.eachLayer(function (layer) {
+                if (layer._path != undefined)
+                    map.removeLayer(layer);
+            });
+            for (var i=0;i<landmarks.length;i++) {
+                var temp = L.marker([landmarks[i].getAttribute("lat"),landmarks[i].getAttribute("lon")]).addTo(landmarks_map).bindPopup("<b>" + landmarks[i].children[0].innerHTML + "</b> <br />"+ landmarks[i].children[1].innerHTML);
+                temp.on('click', landmarkClick);
+            }
+        }
+        
+        map.eachLayer(function (layer) {
+            if (layer._path != undefined)
+                map.removeLayer(layer);
+        });
+
+        if (routeCoords.length > 0) {
+            var route = L.polyline(routeCoords, { color: 'red' });
+            route.addTo(map);
+            if (startMarker != null)
+                map.removeLayer(startMarker);
+            if (endMarker != null)
+                map.removeLayer(endMarker);
+            startMarker = L.marker(routeCoords[0]).addTo(map).bindPopup("<b>Start</b>")
+                .openPopup();
+            endMarker = L.marker(routeCoords[routeCoords.length - 1]).addTo(map).bindPopup("<b>End</b>");
+            //document.getElementById("routeIdentifier").innerHTML = mapName;
+            document.getElementById("elevationChart").innerHTML = "Elevation Chart";
+            map.setView(routeCoords[0]);
+            //console.log(xmlDoc.getElementsByTagName("trkpt"));
+        }
     }
 
     var xmlDoc = reader.readAsText(files[0]);
@@ -76,38 +111,10 @@ function fetchRoute(elem) {
 
                 var elevs = getElevations(this.responseXML);
                 var tags = getLabels(this.responseXML);
-                var ctx = document.getElementById('myChart').getContext('2d');
-                var chart = new Chart(ctx, {
-                    // The type of chart we want to create
-                    type: 'line',
-                    // The data for our dataset
-                    data: {
-                        labels: tags,
-                        datasets: [{
-                            label: "",
-                            backgroundColor: 'rgb(255, 165, 0)',
-                            borderColor: 'rgb(255, 165, 0)',
-                            data: elevs,
-                        }]
-                    },
-
-                    // Configuration options go here
-                    options: {
-                        legend: {
-                            display: false
-                        },
-                        scales: {
-                            yAxes : [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: "Elevation (m)"
-                                }
-                            }]
-                        }
-                    }
-                });
+                makeChart(elevs,tags);
             }
         };
+        
         xhttp.open("GET", path, true);
     }
     else {
@@ -138,6 +145,66 @@ function parseXML(xml) {
     return coords;
 }
 
+function makeChart(elevs,labels={}) {
+    
+                
+    var ctx = document.getElementById('myChart').getContext('2d');
+    if (elevChart)
+        elevChart.destroy();
+    //ctx.height = 200;
+   
+   
+    elevChart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+        // The data for our dataset
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "",
+                backgroundColor: 'rgb(255, 165, 0)',
+                borderColor: 'rgb(255, 165, 0)',
+                data: elevs
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes : [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Elevation (m)",
+                        
+                    },
+                   
+                    gridLines: {
+                        display: false
+                      },
+                    ticks: {
+                        startAtZero: true,
+                        beginAtZero: true,
+                    }
+                      
+                }],
+                xAxes : [{
+                    ticks : {
+                        display: false,
+                        autoskip: false,
+                    },
+                    gridLines: {
+                        display: false
+                      }
+                }],
+                
+            }
+        }
+    });
+}
+
 function getTitle(xmlDoc) {
     var names = xmlDoc.getElementsByTagName("name");
     mapName = names[0].childNodes[0].nodeValue;
@@ -147,9 +214,10 @@ function getTrack(xmlDoc) {
 
     var points = xmlDoc.getElementsByTagName("trkpt");
     var coords = [];
+    for (i=0;i<points.length;i++)
+        coords.push([points[i].getAttribute("lat"),points[i].getAttribute("lon")])
 
-    for (i = 0; i < points.length; i++)
-        coords.push([points[i].getAttribute("lat"), points[i].getAttribute("lon")]);
+    
 
 
     return coords;
@@ -182,7 +250,6 @@ function placeLandmarks() {
             if (this.readyState == 4 && this.status == 200) {
 
                 var landmarks = getLandmarks(this.responseXML);
-                console.log(landmarks[5].children[0].nodeValue);
                 for (var i=0;i<landmarks.length;i++) {
                     var temp = L.marker([landmarks[i].getAttribute("lat"),landmarks[i].getAttribute("lon")]).addTo(landmarks_map).bindPopup("<b>" + landmarks[i].children[0].innerHTML + "</b> <br />"+ landmarks[i].children[1].innerHTML);
                     temp.on('click', landmarkClick);
@@ -210,7 +277,7 @@ function drawLandmarks() {
         accessToken: 'pk.eyJ1IjoicG1hY2FsZCIsImEiOiJjam9lZ2dmNnkwOG5mM3RwaXVpenNjZjl2In0.xY30r6ME_IZuTEAqHvXqbg'
     }).addTo(landmarks_map);
 
-    placeLandmarks();
+    
 
 }
 
@@ -225,6 +292,8 @@ function drawMap() {
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoicG1hY2FsZCIsImEiOiJjam9lZ2dmNnkwOG5mM3RwaXVpenNjZjl2In0.xY30r6ME_IZuTEAqHvXqbg'
     }).addTo(map);
+
+    
     // // adds icon for Kelvingrove museum
     // L.marker([55.8686, -4.2906]).addTo(map)
     //     .bindPopup("<b>Kelvingrove Museum</b><br />Museum")
@@ -259,7 +328,7 @@ function drawMap() {
     //     .bindPopup("<b>Lord Frederick Roberts</b><br />Statue")
     //     .openPopup();
 
-}
+}  
 
 
 
