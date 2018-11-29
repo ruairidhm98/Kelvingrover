@@ -9,7 +9,7 @@
 	<title>Kelvingrover - Easy Walking</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,6 +29,8 @@
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
 	 crossorigin=""></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	
+
 </head>
 
 <body>
@@ -74,14 +76,17 @@
 	</nav>
 	<script type="text/javascript" src="js/maps.js"></script>
 	<div class="mw-75 justified-center">
-		<h1 style="cursor:grab;">Easy Walking Routes</h1>
-		<p class="lead">Easy Walking routes are the routes that we would recommend to people who may
-			struggle with the elevation of some of the moderate routes. These are routes
-			for those who enjoy a leisurely stroll or those that find the moderate walks leave them out of breath at some
-			points. If these routes seem too ambitious, or if you make
-			use of a mobility aid, we'd recommend checking out the page dedicated to our mobility-aid users. Remember,
-			challenging yourself is good, but don't attempt a route alone
-			that may leave you needing assistance at some point.</p>
+
+		<div id="description">
+			<h1>⌄ Easy Walking Routes</h1>
+			<p class="lead">Easy Walking routes are the routes that we would recommend to people who may
+				struggle with the elevation of some of the moderate routes. These are routes
+				for those who enjoy a leisurely stroll or those that find the moderate walks leave them out of breath at some
+				points. If these routes seem too ambitious, or if you make
+				use of a mobility aid, we'd recommend checking out the page dedicated to our mobility-aid users. Remember,
+				challenging yourself is good, but don't attempt a route alone
+				that may leave you needing assistance at some point.</p>
+		</div>
 
 		<h2>Routes Map</h2>
 		<h2 id="routeIdentifier"></h2>
