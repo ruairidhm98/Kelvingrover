@@ -16,10 +16,10 @@ function handleFiles(files) {
         alert("Please upload one file at a time in order to view it.");
         return;
     }
+    /* Picks up any faults in the gpx file */
     var uploaded_xml;
     var reader = new FileReader();
     reader.onload = function() {
-        //console.log(reader.result);
         var gpx_text = reader.result;
         parser = new DOMParser();
         var xml = parser.parseFromString(gpx_text,"text/xml");
@@ -30,20 +30,16 @@ function handleFiles(files) {
         var route = L.polyline(routeCoords, { color: 'red' });
         route.addTo(map);
         if (startMarker != null)
-            map.removeLayer(startMarker);
+             map.removeLayer(startMarker);
         if (endMarker != null)
             map.removeLayer(endMarker);
         startMarker = L.marker(routeCoords[0]).addTo(map).bindPopup("<b>Start</b>")
             .openPopup();
         endMarker = L.marker(routeCoords[routeCoords.length - 1]).addTo(map).bindPopup("<b>End</b>");
-        //document.getElementById("routeIdentifier").innerHTML = mapName;
-        //document.getElementById("elevationChart").innerHTML = "Elevation Chart";
         map.setView(routeCoords[0]);
-        //console.log(xmlDoc.getElementsByTagName("trkpt"));
-    }
-
+    }    
     var xmlDoc = reader.readAsText(files[0]);
-    
+        
 }
 
 
@@ -125,7 +121,6 @@ function getLabels(elevations) {
     for (var i = 0; i < names.length; i++)
         labels.push("Point " + i);
 
-    
     return labels;
 }
 
@@ -139,8 +134,12 @@ function parseXML(xml) {
 }
 
 function getTitle(xmlDoc) {
-    var names = xmlDoc.getElementsByTagName("name");
-    mapName = names[0].childNodes[0].nodeValue;
+    try {
+        var names = xmlDoc.getElementsByTagName("name");
+        mapName = names[0].childNodes[0].nodeValue;
+    } catch (err) {
+        alert("Error: there is a fault in your gpx file.");
+    }
 }
 
 function getTrack(xmlDoc) {
@@ -150,7 +149,6 @@ function getTrack(xmlDoc) {
 
     for (i = 0; i < points.length; i++)
         coords.push([points[i].getAttribute("lat"), points[i].getAttribute("lon")]);
-
 
     return coords;
 }
