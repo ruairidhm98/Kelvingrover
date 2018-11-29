@@ -9,7 +9,8 @@
 	<title>Kelvingrover - Cycling</title>
 
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,8 +78,11 @@
 	</nav>
 	<script type="text/javascript" src="js/maps.js"></script>
 	<div class="mw-75 justified-center">
-		<h1 style="cursor:grab;">Cycling Routes</h1>
-		<p class="lead">With our cycling routes, we tried to mainly stick to the main thoroughfares of the park so as not to force cyclists onto tight paths alongside pedestrians. We have attempted to include enough variety between the routes to allow you to enjoy them individually and hopefully see some sights unique to each onel. Happy cycling!</p>
+
+		<div id="description">
+			<h1>⌄ Cycling Routes</h1>
+			<p class="lead">With our cycling routes, we tried to mainly stick to the main thoroughfares of the park so as not to force cyclists onto tight paths alongside pedestrians. We have attempted to include enough variety between the routes to allow you to enjoy them individually and hopefully see some sights unique to each onel. Happy cycling!</p>
+		</div>
 
 		<h2>Routes Map</h2>
 		<h2 id="routeIdentifier"></h2>
@@ -108,6 +112,7 @@
 
 
 	</div>
+	<script type="text/javascript" src="js/show.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
