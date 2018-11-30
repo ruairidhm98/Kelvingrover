@@ -54,6 +54,12 @@ function handleFiles(files) {
                 temp.on('click', landmarkClick);
             }
         }
+        else {
+            if (startMarker != null)
+                map.removeLayer(startMarker);
+            if (endMarker != null)
+                map.removeLayer(endMarker);
+        }
         
         map.eachLayer(function (layer) {
             if (layer._path != undefined)
