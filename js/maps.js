@@ -168,8 +168,8 @@ function makeChart(elevs,labels={}) {
             labels: labels,
             datasets: [{
                 label: "",
-                backgroundColor: 'rgb(255, 165, 0)',
-                borderColor: 'rgb(255, 165, 0)',
+                backgroundColor: '#90EE90',
+                borderColor: '#90EE90',
                 data: elevs
             }]
         },
@@ -184,7 +184,7 @@ function makeChart(elevs,labels={}) {
                     scaleLabel: {
                         display: true,
                         labelString: "Elevation (m)",
-                        
+                        fontColor: 'white',
                     },
                    
                     gridLines: {
@@ -193,6 +193,7 @@ function makeChart(elevs,labels={}) {
                     ticks: {
                         startAtZero: true,
                         beginAtZero: true,
+                        fontColor: 'white',
                     }
                       
                 }],
